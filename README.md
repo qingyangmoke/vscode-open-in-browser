@@ -3,7 +3,7 @@
 
 ## 功能
 
-```
+``` html
 在文件的右键菜单里里加入 open In Browser菜单
 
 点击 open In Browser 会首先判断配置中的enableHost是否启用 如果没有启用则直接唤起浏览器打开本地文件 如：file:///xxx/xx.html 如果启用则会把 documentRoot 替换为http://host 后打开 
