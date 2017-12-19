@@ -3,15 +3,17 @@
 
 ## 功能
 
- * 在文件的右键菜单里里加入 open In Browser菜单
- 
- * 点击 open In Browser 会首先判断配置中的enableHost是否启用 如果没有启用则直接唤起浏览器打开本地文件 如：file:///xxx/xx.html 如果启用则会把 documentRoot 替换为http://host 后打开 
+```
+在文件的右键菜单里里加入 open In Browser菜单
+
+点击 open In Browser 会首先判断配置中的enableHost是否启用 如果没有启用则直接唤起浏览器打开本地文件 如：file:///xxx/xx.html 如果启用则会把 documentRoot 替换为http://host 后打开 
+```
 
 ## 配置
 ``` json
-  "qingyangmoke.openInBrowser.documentRoot": "/Users/song/Develop/",
-  "qingyangmoke.openInBrowser.enableHost": true,
-  "qingyangmoke.openInBrowser.host": "localhost",
+"qingyangmoke.openInBrowser.documentRoot": "/Users/song/Develop/",
+"qingyangmoke.openInBrowser.enableHost": true,
+"qingyangmoke.openInBrowser.host": "localhost",
 ```
 
 
@@ -34,25 +36,25 @@
   未启用host方式
 
   ``` js
-    "qingyangmoke.openInBrowser.enableHost": false,
+"qingyangmoke.openInBrowser.enableHost": false,
 
-    打开后的地址为：
+打开后的地址为：
 
-    file:///www/github/vscode-test/index.html
+file:///www/github/vscode-test/index.html
   ```
 
 ## 本地编译
 
 ```
-  1. 全局安装 vsce
+1. 全局安装 vsce
 
   npm i vsce -g 
 
-  2. 安装依赖
+2. 安装依赖
 
   npm i
 
-  3. 编译
+3. 编译
   npm run build
 
 ```
