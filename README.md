@@ -18,7 +18,7 @@
 
   2.打开后的地址为：
   
-  http://localhost/vscode-test/index.html
+  http://localhost/github/vscode-test/index.html
   ```
 
   未启用host方式
