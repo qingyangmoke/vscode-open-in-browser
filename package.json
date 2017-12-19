@@ -1,0 +1,134 @@
+{
+  "name": "vscode-open-in-browser",
+  "displayName": "open-in-browser",
+  "description": "",
+  "version": "0.0.51",
+  "publisher": "qingyangmoke",
+  "engines": {
+    "vscode": "^1.17.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:qingyangmoke.command.showPreview",
+    "onCommand:qingyangmoke.command.showPreviewToSide",
+    "onCommand:qingyangmoke.command.openInBrowser"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "exml",
+        "aliases": [
+          "exml",
+          "EXML"
+        ],
+        "extensions": [
+          ".exml",
+          ".EXML"
+        ],
+        "configuration": "./language/language-configuration.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "qingyangmoke.command.openInBrowser",
+        "title": "Open In Browser"
+      },
+      {
+        "command": "qingyangmoke.command.showPreview",
+        "title": "show preview",
+        "icon": {
+          "light": "./media/Preview.svg",
+          "dark": "./media/Preview_inverse.svg"
+        }
+      },
+      {
+        "command": "qingyangmoke.command.showPreviewToSide",
+        "title": "show preview",
+        "icon": {
+          "light": "./media/Preview.svg",
+          "dark": "./media/Preview_inverse.svg"
+        }
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "qingyangmoke.command.openInBrowser",
+          "group": "navigation@1"
+        }
+      ],
+      "editor/title": [
+        {
+          "when": "resourceLangId == exml",
+          "command": "qingyangmoke.command.showPreview",
+          "alt": "qingyangmoke.command.showPreviewToSide",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceLangId == html",
+          "command": "qingyangmoke.command.showPreview",
+          "alt": "qingyangmoke.command.showPreviewToSide",
+          "group": "navigation"
+        }
+      ]
+    },
+    "grammars": [
+      {
+        "language": "exml",
+        "scopeName": "source.exml",
+        "path": "./syntaxes/exml.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "exml",
+        "path": "./snippets/exml.snippets.json"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "openInBrowser",
+      "order": 20,
+      "properties": {
+        "qingyangmoke.openInBrowser.enableHost": {
+          "type": "boolean",
+          "default": false,
+          "description": "if virtual host is enabled",
+          "scope": "resource"
+        },
+        "qingyangmoke.openInBrowser.host": {
+          "type": "string",
+          "default": "localhost",
+          "description": "virtual host domain",
+          "scope": "resource"
+        },
+        "qingyangmoke.openInBrowser.documentRoot": {
+          "type": "string",
+          "default": "",
+          "description": "host document root",
+          "scope": "resource"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.2",
+    "vscode": "^1.1.5",
+    "mocha": "^3.5.0",
+    "eslint": "^4.6.1",
+    "@types/node": "^7.0.0",
+    "@types/mocha": "^2.2.42"
+  },
+  "homepage": "https://github.com/qingyangmoke/vscode-open-inbrowser",
+  "dependencies": {
+    "opn": "^5.1.0"
+  }
+}

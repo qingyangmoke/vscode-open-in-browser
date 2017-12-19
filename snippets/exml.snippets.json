@@ -1,0 +1,39 @@
+{
+  "EXML template": {
+    "prefix": "exml",
+    "body": [
+      "<!DOCTYPE exml>",
+      "<exml>",
+      "</exml>"
+    ],
+    "description": "Simple exml starting point"
+  },
+  "insert image tag": {
+    "prefix": "img | image | Image",
+    "body": "<Image source=\"$1\" width=\"$2\" height=\"$3\" />",
+    "description": "insert image tag"
+  },
+  "insert button tag": {
+    "prefix": "btn | button | Button",
+    "body": "<Button source=\"$1\" width=\"$2\" height=\"$3\" />",
+    "description": "insert Button tag"
+  },
+  "insert width property": {
+    "prefix": "width",
+    "body": "width=\"$1\" ",
+    "description": "width property"
+  },
+  "insert height property": {
+    "prefix": "height",
+    "body": "height=\"$1\" ",
+    "description": "height property"
+  },
+  "insert src property": {
+    "prefix": [
+      "source",
+      "src"
+    ],
+    "body": "source=\"$1\" ",
+    "description": "src property"
+  }
+}
