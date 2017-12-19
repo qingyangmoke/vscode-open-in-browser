@@ -36,3 +36,28 @@
   "qingyangmoke.openInBrowser.enableHost": true,
   "qingyangmoke.openInBrowser.host": "localhost",
 ```
+
+## 本地编译
+
+```
+  1. 全局安装 vsce
+
+  npm i vsce -g 
+
+  2. 安装依赖
+
+  npm i
+
+  3. 编译
+  npm run build
+
+```
+
+## 安装到vscode
+
+``` 
+vscode -> 扩展-> 从 vsix 安装 -> 选择上面编译好的文件
+
+./dist/vscode-open-in-browser-x.x.x.vsix
+
+```
